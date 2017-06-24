@@ -61,3 +61,16 @@ INSERT INTO asign_hobby(id_employee_hobby,id_employee) VALUES(3,3);
 INSERT INTO asign_hobby(id_employee_hobby,id_employee) VALUES(2,3);
 INSERT INTO asign_hobby(id_employee_hobby,id_employee) VALUES(2,4);
 INSERT INTO asign_hobby(id_employee_hobby,id_employee) VALUES(3,4);
+
+
+CREATE TABLE boss_department(
+id_boss_department serial NOT NULL,
+id_employee_department int NOT NULL,
+id_employee int NOT NULL,
+CONSTRAINT fk_id_employee foreign key(id_employee) references employee(id_employee),
+CONSTRAINT fk_id_employee_department foreign key(id_employee_department) references employee_department(id_employee_department));
+
+INSERT INTO boss_department(id_employee_department,id_employee) values(1,1);
+INSERT INTO boss_department(id_employee_department,id_employee) values(2,2);
+INSERT INTO boss_department(id_employee_department,id_employee) values(3,3);
+INSERT INTO boss_department(id_employee_department,id_employee) values(4,4);
